@@ -6,8 +6,8 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="favicon.ico"/>
     <meta name="description" content="Typing Speed Test">
+    <link rel="icon" type="image/x-icon" href="favicon.ico"/>
     <title>Typing Speed Test</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
@@ -41,7 +41,6 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
             overflow-x: hidden;
         }
 
-        /* Animated Background */
         .bg-animation {
             position: fixed;
             top: 0;
@@ -79,7 +78,6 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
             100% { transform: translateY(-1000px) rotate(720deg); opacity: 0; border-radius: 50%; }
         }
 
-        /* Header */
         .header {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
@@ -169,14 +167,12 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
             50% { transform: scale(1.2); }
         }
 
-        /* Main Container */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 30px;
         }
 
-        /* Navigation Tabs */
         .nav-tabs {
             display: flex;
             gap: 10px;
@@ -226,7 +222,6 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
             background: rgba(94, 96, 206, 0.15);
         }
 
-        /* Cards */
         .card {
             background: var(--card-bg);
             border-radius: 24px;
@@ -240,7 +235,6 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
             to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Language Selector */
         .language-selector {
             display: flex;
             gap: 12px;
@@ -289,7 +283,6 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
             background: rgba(255, 255, 255, 0.25);
         }
 
-        /* Typing Area */
         .typing-container {
             position: relative;
         }
@@ -304,13 +297,18 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
             margin-bottom: 20px;
             min-height: 150px;
             position: relative;
-            overflow: hidden;
             border: 2px solid rgba(94, 96, 206, 0.1);
+            word-wrap: break-word;
+            word-break: break-word;
+            overflow-wrap: break-word;
+            white-space: pre-wrap;
+            overflow: hidden;
         }
 
         .text-display .char {
             transition: all 0.1s ease;
             position: relative;
+            display: inline;
         }
 
         .text-display .char.correct {
@@ -360,7 +358,6 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
             cursor: not-allowed;
         }
 
-        /* Stats Display */
         .stats-row {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -409,7 +406,6 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
             margin-top: 5px;
         }
 
-        /* Timer */
         .timer-container {
             display: flex;
             justify-content: center;
@@ -454,7 +450,6 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
             text-align: center;
         }
 
-        /* Control Buttons */
         .controls {
             display: flex;
             gap: 15px;
@@ -511,7 +506,6 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
             background: rgba(0, 0, 0, 0.08);
         }
 
-        /* Results Modal */
         .modal-overlay {
             position: fixed;
             top: 0;
@@ -611,7 +605,6 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
             margin-bottom: 20px;
         }
 
-        /* Help Modal */
         .help-modal {
             max-width: 600px;
             text-align: left;
@@ -680,7 +673,6 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
             margin: 0;
         }
 
-        /* Calendar Section */
         .calendar-container {
             display: none;
         }
@@ -783,7 +775,6 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
             border-color: transparent;
         }
 
-        /* Statistics Section */
         .stats-container {
             display: none;
         }
@@ -866,7 +857,6 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
             color: var(--text-light);
         }
 
-        /* Progress Bar */
         .progress-container {
             margin-top: 20px;
         }
@@ -892,7 +882,6 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
             transition: width 0.5s ease;
         }
 
-        /* Achievements */
         .achievements-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
@@ -927,7 +916,6 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
             font-weight: 600;
         }
 
-        /* Daily Bonus */
         .daily-bonus {
             background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--accent) 100%);
             color: white;
@@ -953,7 +941,6 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
             font-weight: 700;
         }
 
-        /* Keyboard Shortcuts Info */
         .shortcuts-hint {
             text-align: center;
             color: var(--text-light);
@@ -976,7 +963,31 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
             font-weight: 600;
         }
 
-        /* Responsive */
+        .text-progress {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .text-progress-bar {
+            flex: 1;
+            height: 6px;
+            background: var(--light);
+            border-radius: 3px;
+            margin: 0 15px;
+            overflow: hidden;
+        }
+
+        .text-progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+            border-radius: 3px;
+            transition: width 0.3s ease;
+        }
+
         @media (max-width: 768px) {
             .header {
                 flex-direction: column;
@@ -1029,7 +1040,6 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
             }
         }
 
-        /* Confetti Animation */
         .confetti {
             position: fixed;
             width: 10px;
@@ -1046,7 +1056,6 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
             }
         }
 
-        /* Section visibility */
         .section {
             display: none;
         }
@@ -1057,13 +1066,11 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
     </style>
 </head>
 <body>
-    <!-- Animated Background -->
     <div class="bg-animation">
         <span></span><span></span><span></span><span></span><span></span>
         <span></span><span></span><span></span><span></span><span></span>
     </div>
 
-    <!-- Header -->
     <header class="header">
         <div class="logo">
             <div class="logo-icon">⌨️</div>
@@ -1088,9 +1095,7 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
         </div>
     </header>
 
-    <!-- Main Container -->
     <div class="container">
-        <!-- Navigation -->
         <nav class="nav-tabs">
             <button class="nav-tab active" data-tab="test">
                 ⌨️ Typing Test <span class="shortcut">1</span>
@@ -1106,17 +1111,14 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
             </button>
         </nav>
 
-        <!-- Typing Test Section -->
         <section id="test-section" class="section active">
             <div class="card">
-                <!-- Daily Bonus -->
                 <div class="daily-bonus" id="dailyBonus" style="display: none;">
                     <h3>🎉 Daily Bonus!</h3>
                     <p>You've visited <span class="streak-count" id="visitStreak">0</span> days in a row!</p>
                     <p>+<span id="bonusPoints">0</span> bonus points earned!</p>
                 </div>
 
-                <!-- Language Selector -->
                 <div class="language-selector">
                     <button class="lang-btn active" data-lang="en">
                         English <span class="shortcut">Alt+1</span>
@@ -1132,7 +1134,6 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
                     </button>
                 </div>
 
-                <!-- Timer Selection -->
                 <div class="timer-container">
                     <button class="timer-btn" data-time="30">30s</button>
                     <button class="timer-btn active" data-time="60">60s</button>
@@ -1140,8 +1141,14 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
                     <div class="timer-display" id="timerDisplay">60</div>
                 </div>
 
-                <!-- Typing Area -->
                 <div class="typing-container">
+                    <div class="text-progress" id="textProgress" style="display: none;">
+                        <span>Text <span id="currentTextNum">1</span> of <span id="totalTexts">8</span></span>
+                        <div class="text-progress-bar">
+                            <div class="text-progress-fill" id="textProgressFill" style="width: 0%"></div>
+                        </div>
+                        <span id="charsTyped">0</span> / <span id="totalChars">0</span> chars</span>
+                    </div>
                     <div class="text-display" id="textDisplay">
                         Press <strong>Enter</strong> or click "Start Test" to begin...
                     </div>
@@ -1158,7 +1165,6 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
                     >
                 </div>
 
-                <!-- Live Stats -->
                 <div class="stats-row">
                     <div class="stat-card">
                         <span class="stat-value" id="liveCPM">0</span>
@@ -1178,7 +1184,6 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
                     </div>
                 </div>
 
-                <!-- Controls -->
                 <div class="controls">
                     <button class="btn btn-primary" id="startBtn">
                         ▶️ Start Test <span class="shortcut">Enter</span>
@@ -1188,14 +1193,12 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
                     </button>
                 </div>
 
-                <!-- Shortcuts Hint -->
                 <div class="shortcuts-hint">
                     💡 Quick tips: Press <kbd>Enter</kbd> to start, <kbd>Esc</kbd> to reset, <kbd>Tab</kbd> to restart after test, <kbd>F1</kbd> for help
                 </div>
             </div>
         </section>
 
-        <!-- Calendar Section -->
         <section id="calendar-section" class="section">
             <div class="card">
                 <div class="calendar-header">
@@ -1205,9 +1208,7 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
                         <button id="nextMonth">▶</button>
                     </div>
                 </div>
-                <div class="calendar-grid" id="calendarGrid">
-                    <!-- Calendar will be generated here -->
-                </div>
+                <div class="calendar-grid" id="calendarGrid"></div>
 
                 <div class="progress-container" style="margin-top: 30px;">
                     <h4>Monthly Progress</h4>
@@ -1222,7 +1223,6 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
             </div>
         </section>
 
-        <!-- Statistics Section -->
         <section id="stats-section" class="section">
             <div class="card">
                 <h3 style="margin-bottom: 20px;">📊 Your Statistics</h3>
@@ -1247,24 +1247,18 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
                 </div>
 
                 <h4 style="margin: 30px 0 15px;">Recent History</h4>
-                <div class="history-list" id="historyList">
-                    <!-- History items will be generated here -->
-                </div>
+                <div class="history-list" id="historyList"></div>
             </div>
         </section>
 
-        <!-- Achievements Section -->
         <section id="achievements-section" class="section">
             <div class="card">
                 <h3 style="margin-bottom: 20px;">🏆 Achievements</h3>
-                <div class="achievements-grid" id="achievementsGrid">
-                    <!-- Achievements will be generated here -->
-                </div>
+                <div class="achievements-grid" id="achievementsGrid"></div>
             </div>
         </section>
     </div>
 
-    <!-- Results Modal -->
     <div class="modal-overlay" id="resultsModal">
         <div class="modal">
             <h2>🎉 Test Complete!</h2>
@@ -1289,6 +1283,11 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
                 </div>
             </div>
 
+            <div class="modal-stat" style="margin-bottom: 20px;">
+                <div class="modal-stat-value" id="finalTextsCompleted">0</div>
+                <div class="modal-stat-label">Texts Completed</div>
+            </div>
+
             <div class="stars-earned" id="starsEarned">⭐⭐⭐</div>
             <div class="points-earned" id="pointsEarned">+100 points!</div>
 
@@ -1303,7 +1302,6 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
         </div>
     </div>
 
-    <!-- Help Modal -->
     <div class="modal-overlay" id="helpModal">
         <div class="modal help-modal">
             <h2>❓ How to Play</h2>
@@ -1320,7 +1318,8 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
                     <li style="display: list-item;">Choose a time duration (30s, 60s, or 120s)</li>
                     <li style="display: list-item;">Press Enter or click "Start Test"</li>
                     <li style="display: list-item;">Type the text shown in the display area</li>
-                    <li style="display: list-item;">Try to type accurately - errors reduce your score!</li>
+                    <li style="display: list-item;">Complete each text to move to the next one</li>
+                    <li style="display: list-item;">Test ends when timer runs out</li>
                 </ul>
             </div>
 
@@ -1362,7 +1361,7 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
 
             <div class="help-section">
                 <div class="help-tip">
-                    <p>💡 <strong>Pro Tip:</strong> Focus on accuracy first, then speed. It's better to type slowly and correctly than fast with many errors!</p>
+                    <p>💡 <strong>Pro Tip:</strong> Focus on accuracy first, then speed. Complete each text to move to the next one and maximize your score!</p>
                 </div>
             </div>
 
@@ -1375,7 +1374,6 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
     </div>
 
     <script>
-        // Text passages for different languages
         const textPassages = {
             en: [
                 "The morning sun cast golden rays across the peaceful valley, awakening the sleeping village below. Birds began their cheerful songs as farmers prepared for another day of honest work in the fields.",
@@ -1419,7 +1417,6 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
             ]
         };
 
-        // Achievements data
         const achievementsData = [
             { id: 'first_test', name: 'First Steps', icon: '🎯', description: 'Complete your first test', condition: (stats) => stats.totalTests >= 1 },
             { id: 'speed_demon', name: 'Speed Demon', icon: '⚡', description: 'Reach 300 CPM', condition: (stats) => stats.bestCPM >= 300 },
@@ -1435,14 +1432,16 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
             { id: 'accuracy_king', name: 'Accuracy King', icon: '🎯', description: '95%+ avg accuracy', condition: (stats) => stats.avgAccuracy >= 95 }
         ];
 
-        // App State
         class TypingApp {
             constructor() {
                 this.state = this.loadState();
                 this.currentText = '';
                 this.currentIndex = 0;
                 this.errors = 0;
+                this.totalErrors = 0;
                 this.correctChars = 0;
+                this.totalCorrectChars = 0;
+                this.totalTypedChars = 0;
                 this.isRunning = false;
                 this.timer = null;
                 this.timeLeft = 60;
@@ -1452,6 +1451,11 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
                 this.currentMonth = new Date().getMonth();
                 this.currentYear = new Date().getFullYear();
                 this.testCompleted = false;
+                
+                // Text management
+                this.textQueue = [];
+                this.currentTextIndex = 0;
+                this.textsCompleted = 0;
 
                 this.init();
             }
@@ -1522,12 +1526,10 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
                         this.state.maxStreak = this.state.streak;
                     }
 
-                    // Award bonus points for streak
                     const bonusPoints = this.state.streak * 10;
                     this.state.totalPoints += bonusPoints;
                     this.state.totalStars++;
 
-                    // Mark today as visited
                     this.state.dailyVisits[today] = {
                         visited: true,
                         tests: 0,
@@ -1541,7 +1543,6 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
                     this.state.lastVisit = today;
                     this.saveState();
 
-                    // Show daily bonus
                     this.showDailyBonus(bonusPoints);
                 }
             }
@@ -1558,42 +1559,34 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
             }
 
             bindEvents() {
-                // Navigation tabs
                 document.querySelectorAll('.nav-tab').forEach(tab => {
                     tab.addEventListener('click', () => this.switchTab(tab.dataset.tab));
                 });
 
-                // Language buttons
                 document.querySelectorAll('.lang-btn').forEach(btn => {
                     btn.addEventListener('click', () => this.selectLanguage(btn.dataset.lang));
                 });
 
-                // Timer buttons
                 document.querySelectorAll('.timer-btn').forEach(btn => {
                     btn.addEventListener('click', () => this.selectTime(parseInt(btn.dataset.time)));
                 });
 
-                // Control buttons
                 document.getElementById('startBtn').addEventListener('click', () => this.startTest());
                 document.getElementById('resetBtn').addEventListener('click', () => this.resetTest());
                 document.getElementById('tryAgainBtn').addEventListener('click', () => this.tryAgain());
                 document.getElementById('closeModalBtn').addEventListener('click', () => this.closeModal());
 
-                // Help buttons
                 document.getElementById('helpBtn').addEventListener('click', () => this.openHelp());
                 document.getElementById('closeHelpBtn').addEventListener('click', () => this.closeHelp());
 
-                // Typing input
                 document.getElementById('typingInput').addEventListener('input', (e) => this.handleInput(e));
                 document.getElementById('typingInput').addEventListener('keydown', (e) => {
                     if (e.key === 'Tab') e.preventDefault();
                 });
 
-                // Calendar navigation
                 document.getElementById('prevMonth').addEventListener('click', () => this.changeMonth(-1));
                 document.getElementById('nextMonth').addEventListener('click', () => this.changeMonth(1));
 
-                // Close modals on overlay click
                 document.getElementById('resultsModal').addEventListener('click', (e) => {
                     if (e.target.id === 'resultsModal') this.closeModal();
                 });
@@ -1604,12 +1597,10 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
 
             bindKeyboardShortcuts() {
                 document.addEventListener('keydown', (e) => {
-                    // Don't trigger shortcuts when typing in input
                     const isTyping = document.activeElement === document.getElementById('typingInput');
                     const resultsModalOpen = document.getElementById('resultsModal').classList.contains('active');
                     const helpModalOpen = document.getElementById('helpModal').classList.contains('active');
 
-                    // F1 - Help (always available)
                     if (e.key === 'F1') {
                         e.preventDefault();
                         if (helpModalOpen) {
@@ -1620,7 +1611,6 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
                         return;
                     }
 
-                    // Escape - Reset/Close
                     if (e.key === 'Escape') {
                         e.preventDefault();
                         if (helpModalOpen) {
@@ -1633,17 +1623,14 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
                         return;
                     }
 
-                    // Tab - Try again (only when results modal is open)
                     if (e.key === 'Tab' && resultsModalOpen) {
                         e.preventDefault();
                         this.tryAgain();
                         return;
                     }
 
-                    // Don't process other shortcuts if typing or modal open
                     if (isTyping || helpModalOpen) return;
 
-                    // Enter - Start test (when not running and on test tab)
                     if (e.key === 'Enter' && !this.isRunning && !resultsModalOpen) {
                         e.preventDefault();
                         const testSection = document.getElementById('test-section');
@@ -1653,7 +1640,6 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
                         return;
                     }
 
-                    // Number keys 1-4 for tabs (without Alt)
                     if (!e.altKey && ['1', '2', '3', '4'].includes(e.key) && !resultsModalOpen) {
                         e.preventDefault();
                         const tabs = ['test', 'calendar', 'stats', 'achievements'];
@@ -1661,7 +1647,6 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
                         return;
                     }
 
-                    // Alt + Number keys for language selection
                     if (e.altKey && ['1', '2', '3', '4'].includes(e.key)) {
                         e.preventDefault();
                         const langs = ['en', 'uk', 'ru', 'de'];
@@ -1710,6 +1695,15 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
                 document.getElementById('timerDisplay').textContent = time;
             }
 
+            shuffleArray(array) {
+                const shuffled = [...array];
+                for (let i = shuffled.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+                }
+                return shuffled;
+            }
+
             startTest() {
                 if (this.isRunning) return;
 
@@ -1717,32 +1711,46 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
                 this.testCompleted = false;
                 this.currentIndex = 0;
                 this.errors = 0;
+                this.totalErrors = 0;
                 this.correctChars = 0;
+                this.totalCorrectChars = 0;
+                this.totalTypedChars = 0;
                 this.timeLeft = this.selectedTime;
                 this.startTime = Date.now();
+                this.textsCompleted = 0;
 
-                // Get random text
-                const passages = textPassages[this.selectedLang];
-                this.currentText = passages[Math.floor(Math.random() * passages.length)];
+                // Shuffle and prepare text queue
+                this.textQueue = this.shuffleArray(textPassages[this.selectedLang]);
+                this.currentTextIndex = 0;
+                this.currentText = this.textQueue[this.currentTextIndex];
 
-                // Display text
+                // Show progress
+                document.getElementById('textProgress').style.display = 'flex';
+                document.getElementById('totalTexts').textContent = this.textQueue.length;
+                this.updateTextProgress();
+
                 this.renderText();
 
-                // Enable input
                 const input = document.getElementById('typingInput');
                 input.disabled = false;
                 input.value = '';
                 input.focus();
 
-                // Update button
                 document.getElementById('startBtn').innerHTML = '⏸️ Running...';
                 document.getElementById('startBtn').disabled = true;
 
-                // Start timer
                 this.timer = setInterval(() => this.updateTimer(), 1000);
 
-                // Track language usage
                 this.state.languagesUsed.add(this.selectedLang);
+            }
+
+            updateTextProgress() {
+                document.getElementById('currentTextNum').textContent = this.currentTextIndex + 1;
+                document.getElementById('charsTyped').textContent = this.currentIndex;
+                document.getElementById('totalChars').textContent = this.currentText.length;
+                
+                const progress = (this.currentIndex / this.currentText.length) * 100;
+                document.getElementById('textProgressFill').style.width = `${progress}%`;
             }
 
             renderText() {
@@ -1750,18 +1758,15 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
                 display.innerHTML = this.currentText.split('').map((char, i) => {
                     let className = 'char ';
                     if (i < this.currentIndex) {
-                        className += this.getCharClass(i);
+                        className += 'pending';
                     } else if (i === this.currentIndex) {
                         className += 'current';
                     } else {
                         className += 'pending';
                     }
-                    return `<span class="${className}">${char === ' ' ? '&nbsp;' : char}</span>`;
+                    const displayChar = char === ' ' ? ' ' : char;
+                    return `<span class="${className}">${displayChar}</span>`;
                 }).join('');
-            }
-
-            getCharClass(index) {
-                return 'pending';
             }
 
             handleInput(e) {
@@ -1770,10 +1775,8 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
                 const inputValue = e.target.value;
                 const inputLength = inputValue.length;
 
-                // Update current index
                 this.currentIndex = inputLength;
 
-                // Check characters
                 let correct = 0;
                 let errors = 0;
 
@@ -1801,27 +1804,56 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
                 this.correctChars = correct;
                 this.errors = errors;
 
-                // Update live stats
+                this.updateTextProgress();
                 this.updateLiveStats();
 
-                // Check if completed
+                // Check if current text is completed
                 if (inputLength >= this.currentText.length) {
+                    this.completeCurrentText();
+                }
+            }
+
+            completeCurrentText() {
+                // Add current text stats to totals
+                this.totalCorrectChars += this.correctChars;
+                this.totalErrors += this.errors;
+                this.totalTypedChars += this.currentText.length;
+                this.textsCompleted++;
+
+                // Move to next text
+                this.currentTextIndex++;
+
+                if (this.currentTextIndex < this.textQueue.length) {
+                    // Load next text
+                    this.currentText = this.textQueue[this.currentTextIndex];
+                    this.currentIndex = 0;
+                    this.correctChars = 0;
+                    this.errors = 0;
+
+                    // Clear input and render new text
+                    document.getElementById('typingInput').value = '';
+                    this.renderText();
+                    this.updateTextProgress();
+                } else {
+                    // All texts completed - end test
                     this.endTest();
                 }
             }
 
             updateLiveStats() {
-                const elapsed = (Date.now() - this.startTime) / 1000 / 60; // minutes
-                const cpm = elapsed > 0 ? Math.round(this.correctChars / elapsed) : 0;
+                const elapsed = (Date.now() - this.startTime) / 1000 / 60;
+                const totalCorrect = this.totalCorrectChars + this.correctChars;
+                const cpm = elapsed > 0 ? Math.round(totalCorrect / elapsed) : 0;
                 const wpm = Math.round(cpm / 5);
-                const accuracy = this.currentIndex > 0 
-                    ? Math.round((this.correctChars / this.currentIndex) * 100) 
+                const totalTyped = this.totalTypedChars + this.currentIndex;
+                const accuracy = totalTyped > 0 
+                    ? Math.round((totalCorrect / totalTyped) * 100) 
                     : 100;
 
                 document.getElementById('liveCPM').textContent = cpm;
                 document.getElementById('liveWPM').textContent = wpm;
                 document.getElementById('liveAccuracy').textContent = accuracy + '%';
-                document.getElementById('liveErrors').textContent = this.errors;
+                document.getElementById('liveErrors').textContent = this.totalErrors + this.errors;
             }
 
             updateTimer() {
@@ -1844,22 +1876,24 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
                 document.getElementById('startBtn').innerHTML = '▶️ Start Test <span class="shortcut">Enter</span>';
                 document.getElementById('startBtn').disabled = false;
 
-                // Calculate final stats
+                // Calculate final stats including current text progress
                 const elapsed = (Date.now() - this.startTime) / 1000 / 60;
-                const cpm = elapsed > 0 ? Math.round(this.correctChars / elapsed) : 0;
+                const totalCorrect = this.totalCorrectChars + this.correctChars;
+                const totalTyped = this.totalTypedChars + this.currentIndex;
+                const totalErrors = this.totalErrors + this.errors;
+
+                const cpm = elapsed > 0 ? Math.round(totalCorrect / elapsed) : 0;
                 const wpm = Math.round(cpm / 5);
-                const accuracy = this.currentIndex > 0 
-                    ? Math.round((this.correctChars / this.currentIndex) * 100) 
+                const accuracy = totalTyped > 0 
+                    ? Math.round((totalCorrect / totalTyped) * 100) 
                     : 100;
 
-                // Calculate stars and points
                 let stars = 1;
                 if (accuracy >= 95 && cpm >= 200) stars = 3;
                 else if (accuracy >= 85 && cpm >= 150) stars = 2;
 
-                const points = Math.round((cpm * accuracy / 100) + (stars * 50));
+                const points = Math.round((cpm * accuracy / 100) + (stars * 50) + (this.textsCompleted * 20));
 
-                // Update state
                 this.state.totalPoints += points;
                 this.state.totalStars += stars;
                 this.state.totalTests++;
@@ -1868,11 +1902,10 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
                     this.state.bestCPM = cpm;
                 }
 
-                if (accuracy === 100) {
+                if (accuracy === 100 && totalTyped > 0) {
                     this.state.perfectTests++;
                 }
 
-                // Update daily stats
                 const today = new Date().toDateString();
                 if (this.state.dailyVisits[today]) {
                     this.state.dailyVisits[today].tests++;
@@ -1881,23 +1914,21 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
                     }
                 }
 
-                // Add to history
                 this.state.history.unshift({
                     date: new Date().toISOString(),
                     cpm,
                     wpm,
                     accuracy,
-                    errors: this.errors,
+                    errors: totalErrors,
                     language: this.selectedLang,
-                    duration: this.selectedTime
+                    duration: this.selectedTime,
+                    textsCompleted: this.textsCompleted
                 });
 
-                // Keep only last 100 entries
                 if (this.state.history.length > 100) {
                     this.state.history = this.state.history.slice(0, 100);
                 }
 
-                // Calculate averages
                 const totalCPM = this.state.history.reduce((sum, h) => sum + h.cpm, 0);
                 const totalAcc = this.state.history.reduce((sum, h) => sum + h.accuracy, 0);
                 this.state.avgCPM = Math.round(totalCPM / this.state.history.length);
@@ -1907,8 +1938,7 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
                 this.updateUI();
                 this.checkAchievements();
 
-                // Show results modal
-                this.showResults(cpm, wpm, accuracy, this.errors, stars, points);
+                this.showResults(cpm, wpm, accuracy, totalErrors, stars, points);
             }
 
             showResults(cpm, wpm, accuracy, errors, stars, points) {
@@ -1916,12 +1946,12 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
                 document.getElementById('finalWPM').textContent = wpm;
                 document.getElementById('finalAccuracy').textContent = accuracy + '%';
                 document.getElementById('finalErrors').textContent = errors;
+                document.getElementById('finalTextsCompleted').textContent = this.textsCompleted;
                 document.getElementById('starsEarned').textContent = '⭐'.repeat(stars) + '☆'.repeat(3 - stars);
                 document.getElementById('pointsEarned').textContent = `+${points} points!`;
 
                 document.getElementById('resultsModal').classList.add('active');
 
-                // Confetti animation
                 if (stars >= 2) {
                     this.createConfetti();
                 }
@@ -1959,11 +1989,18 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
                 clearInterval(this.timer);
                 this.currentIndex = 0;
                 this.errors = 0;
+                this.totalErrors = 0;
                 this.correctChars = 0;
+                this.totalCorrectChars = 0;
+                this.totalTypedChars = 0;
                 this.timeLeft = this.selectedTime;
+                this.textsCompleted = 0;
+                this.textQueue = [];
+                this.currentTextIndex = 0;
 
                 document.getElementById('timerDisplay').textContent = this.selectedTime;
                 document.getElementById('textDisplay').innerHTML = 'Press <strong>Enter</strong> or click "Start Test" to begin...';
+                document.getElementById('textProgress').style.display = 'none';
                 
                 const input = document.getElementById('typingInput');
                 input.value = '';
@@ -1994,10 +2031,8 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
 
                 title.textContent = `${monthNames[this.currentMonth]} ${this.currentYear}`;
 
-                // Clear grid
                 grid.innerHTML = '';
 
-                // Add day headers
                 dayNames.forEach(day => {
                     const header = document.createElement('div');
                     header.className = 'calendar-day-header';
@@ -2005,19 +2040,16 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
                     grid.appendChild(header);
                 });
 
-                // Get first day of month and total days
                 const firstDay = new Date(this.currentYear, this.currentMonth, 1).getDay();
                 const totalDays = new Date(this.currentYear, this.currentMonth + 1, 0).getDate();
                 const today = new Date();
 
-                // Add empty cells for days before first day
                 for (let i = 0; i < firstDay; i++) {
                     const cell = document.createElement('div');
                     cell.className = 'calendar-day other-month';
                     grid.appendChild(cell);
                 }
 
-                // Add days
                 for (let day = 1; day <= totalDays; day++) {
                     const cell = document.createElement('div');
                     cell.className = 'calendar-day';
@@ -2025,14 +2057,12 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
 
                     const dateStr = new Date(this.currentYear, this.currentMonth, day).toDateString();
                     
-                    // Check if today
                     if (day === today.getDate() && 
                         this.currentMonth === today.getMonth() && 
                         this.currentYear === today.getFullYear()) {
                         cell.classList.add('today');
                     }
 
-                    // Check if has activity
                     if (this.state.dailyVisits[dateStr]) {
                         cell.classList.add('has-activity');
                         if (this.state.dailyVisits[dateStr].tests > 0) {
@@ -2043,7 +2073,6 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
                     grid.appendChild(cell);
                 }
 
-                // Update monthly progress
                 const daysInMonth = totalDays;
                 const daysWithActivity = Object.keys(this.state.dailyVisits).filter(date => {
                     const d = new Date(date);
@@ -2088,7 +2117,7 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
                     div.innerHTML = `
                         <div>
                             <div class="history-date">${date.toLocaleDateString()} ${date.toLocaleTimeString()}</div>
-                            <div>${langNames[item.language] || 'Unknown'} • ${item.duration}s</div>
+                            <div>${langNames[item.language] || 'Unknown'} • ${item.duration}s • ${item.textsCompleted || 0} texts</div>
                         </div>
                         <div class="history-stats">
                             <div class="history-stat">
@@ -2162,7 +2191,6 @@ Copyright (c) 2025 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
             }
         }
 
-        // Initialize app
         const app = new TypingApp();
     </script>
 </body>
