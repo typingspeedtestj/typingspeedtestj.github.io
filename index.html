@@ -1543,9 +1543,10 @@ Copyright (c) 2025-2026 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
                 this.totalTypedChars = 0;
                 this.isRunning = false;
                 this.timer = null;
-                this.timeLeft = 60;
-                this.selectedTime = 60;
-                this.selectedLang = 'en';
+                this.timeLeft = this.state.selectedTime || 60;
+                this.selectedTime = this.state.selectedTime || 60;
+                this.selectedLang = this.state.selectedLang || 'en';
+                this.selectedTab = this.state.selectedTab || 'test';
                 this.startTime = null;
                 this.currentMonth = new Date().getMonth();
                 this.currentYear = new Date().getFullYear();
@@ -1574,7 +1575,10 @@ Copyright (c) 2025-2026 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
                     totalDays: 0,
                     bestCPM: 0,
                     avgCPM: 0,
-                    avgAccuracy: 0
+                    avgAccuracy: 0,
+                    selectedTab: 'test',
+                    selectedLang: 'en',
+                    selectedTime: 60
                 };
 
                 const saved = localStorage.getItem('typingAppState');
@@ -1589,12 +1593,16 @@ Copyright (c) 2025-2026 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
             saveState() {
                 const toSave = {
                     ...this.state,
-                    languagesUsed: Array.from(this.state.languagesUsed)
+                    languagesUsed: Array.from(this.state.languagesUsed),
+                    selectedTab: this.selectedTab,
+                    selectedLang: this.selectedLang,
+                    selectedTime: this.selectedTime
                 };
                 localStorage.setItem('typingAppState', JSON.stringify(toSave));
             }
 
             init() {
+                this.restorePreferences();
                 this.checkDailyVisit();
                 this.bindEvents();
                 this.bindKeyboardShortcuts();
@@ -1602,6 +1610,23 @@ Copyright (c) 2025-2026 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
                 this.generateCalendar();
                 this.renderAchievements();
                 this.renderHistory();
+            }
+
+            restorePreferences() {
+                // Restore selected tab
+                this.switchTab(this.selectedTab);
+
+                // Restore selected language
+                document.querySelectorAll('.lang-btn').forEach(btn => {
+                    btn.classList.toggle('active', btn.dataset.lang === this.selectedLang);
+                });
+
+                // Restore selected time
+                this.timeLeft = this.selectedTime;
+                document.querySelectorAll('.timer-btn').forEach(btn => {
+                    btn.classList.toggle('active', parseInt(btn.dataset.time) === this.selectedTime);
+                });
+                document.getElementById('timerDisplay').textContent = this.selectedTime;
             }
 
             checkDailyVisit() {
@@ -1765,6 +1790,8 @@ Copyright (c) 2025-2026 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
             }
 
             switchTab(tab) {
+                this.selectedTab = tab;
+
                 document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
                 document.querySelector(`[data-tab="${tab}"]`).classList.add('active');
 
@@ -1774,6 +1801,8 @@ Copyright (c) 2025-2026 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
                 if (tab === 'calendar') this.generateCalendar();
                 if (tab === 'stats') this.updateStats();
                 if (tab === 'achievements') this.renderAchievements();
+
+                this.saveState();
             }
 
             selectLanguage(lang) {
@@ -1784,6 +1813,7 @@ Copyright (c) 2025-2026 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
                 if (!this.isRunning) {
                     this.resetTest();
                 }
+                this.saveState();
             }
 
             selectTime(time) {
@@ -1793,6 +1823,7 @@ Copyright (c) 2025-2026 Yuliya Kolesnikova <0009-0000-6151-7415@orcid.org>
                     btn.classList.toggle('active', parseInt(btn.dataset.time) === time);
                 });
                 document.getElementById('timerDisplay').textContent = time;
+                this.saveState();
             }
 
             shuffleArray(array) {
