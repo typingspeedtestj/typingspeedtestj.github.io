@@ -2,7 +2,7 @@
 
 A modern, multilingual typing speed test application with progress tracking and achievements.
 
-![Typing Speed Test](https://img.shields.io/badge/version-1.0.0-blue)
+![Typing Speed Test](https://img.shields.io/badge/version-2.0-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
 ## 🌐 Demo
